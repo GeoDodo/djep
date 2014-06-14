@@ -1,0 +1,35 @@
+body.profilepage {
+    .profile {
+        @include grid-row;
+    }
+
+    img.avatar {
+        border: 3px solid $background1;
+        padding: 2px;
+    }
+
+    div.misc {
+        text-align: center;
+        @media #{$medium-up} {
+            @include grid-column($columns: 4);
+            text-align: left;
+        }
+    }
+
+    .info {
+        @media #{$medium-up} {
+            @include grid-column($columns: 8);
+        }
+        p:first-child {
+            margin-top: 0;
+        }
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin: 0;
+    }
+}

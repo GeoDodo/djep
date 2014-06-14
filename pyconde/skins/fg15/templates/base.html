@@ -1,0 +1,171 @@
+{% load cms_tags sekizai_tags menu_tags compress i18n static statici18n %}<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FOSSGIS 2015 - {% block page_title %}Welcome{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% compress js %}
+        <script type="text/javascript" src="{% static "assets/bower_components/modernizr/modernizr.js"%}"></script>
+        {% endcompress %}
+        <link rel="stylesheet" href="{% static "assets/css/screen.css" %}">
+        {% block site_meta %}
+        <meta name="author" content="FOSSGIS e.V.">
+        <meta name="keywords" content="{% block meta_keywords %}FOSSGIS Verein, FOSSGIS e.V., FOSSGIS Konferenz 2015{% endblock %}">
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        {% endblock %}
+        <link rel="icon" href="{% static "assets/images/favicon.ico" %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static "assets/images/favicon-152.png" %}">
+        {% render_block "css" postprocessor "compressor.contrib.sekizai.compress" %}
+        {% render_block "css_external" %}
+        {% block extra_head %}{% endblock %}
+    </head>
+    <body class="{% block bodyclass %}{% endblock %}">
+        {% cms_toolbar %}
+        <div class="container">
+            <header>
+                <div class="contain-to-grid main-nav">
+                    {% show_menu 0 1 1 1 "cms/primary-navigation.html" %}
+                </div>
+                <div class="inner">
+                    <a href="/" class="logo">
+                        <img class="big" src="{% static "assets/images/fossgis_2015.png" %}" alt="FOSGSIS Konferenz 2015" />
+                    </a>
+                    {% if user.is_staff %}
+                    <div id="adminbox">
+                    <a href="">{% trans "Admin" %} <i class="fa fa-fw fa-angle-left"></i></a>
+                    <ul class="dropdown">
+                        <li class=""><a href="{% url "admin:index" %}">Django Admin</a></li>
+                        {% if perms.accounts.send_user_mails %}<li class=""><a href="{% url "account_sendmail" %}">{% trans "Send mail" %}</a></li>{% endif %}
+                        {% show_menu_below_id "sponsorship" %}
+                    </ul>
+                    </div>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <p id="login">
+                        <a href="{% url 'auth_login' %}">{% trans "Login" %}</a> or <a href="{% url 'userprofiles_registration' %}">{% trans "Sign up" %}</a>
+                    </p>
+                    {% else %}
+                    <div id="accountbox">
+                    <a href="{% url 'account_profile' uid=user.pk %}">{% trans "Your profile" %} <i class="fa fa-fw fa-angle-left"></i></a>
+                    <ul class="dropdown">
+                        {% show_menu_below_id "accounts" %}
+                    </ul>
+                    </div>
+                    {% endif %}
+                    {% if current_conference.get_reviews_active and user.is_authenticated or user.is_staff %}
+                    <div id="reviewbox">
+                    <a href="{% page_url "reviews" %}">{% page_attribute "menu_title" "reviews" %} <i class="fa fa-fw fa-angle-left"></i></a>
+                    <ul class="dropdown">
+                        {% show_menu_below_id "reviews" %}
+                    </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </header>
+            <div id="main">
+            {% block main %}
+                {% block site_teaser %}{% endblock %}
+                <section id="content" class="container">
+                    {% block top_notices %}{% endblock %}
+                    {% for message in messages %}
+                      <div id="message_{{ forloop.counter }}"{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                    {% block site_title %}<h1 id="site-title">{% block title %}{% endblock %}</h1>{% endblock %}
+                    {% block site_content %}
+                        {% block content %}
+                            {% placeholder site_content %}
+                        {% endblock %}
+                    {% endblock %}
+                </section>
+            {% endblock %}
+            </div>
+            <footer>
+                <div class="doormat">
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="#" class="organizer">
+                                    <img src="{% static "assets/images/fossgis_neu.png" %}" alt="FOSSGIS e.V." />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="organizer">
+                                    <img src="{% static "assets/images/osgeo.png" %}" alt="OSGEO" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="organizer">
+                                    <img src="{% static "assets/images/osm.png" %}" alt="OpenStreetMap" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="#" class="organizer">
+                                    <img src="{% static "assets/images/ifgi.jpg" %}" alt="FOSSGIS e.V." />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="organizer">
+                                    <img src="{% static "assets/images/wwu.jpg" %}" alt="OSGEO" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="organizer">
+                                    <img src="{% static "assets/images/52n.png" %}" alt="OpenStreetMap" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="footer-ack">
+                    </div>
+                </div>
+                <div id="copyright">
+                    <p>&copy; 2015 <a href="http://fossgis.org/">FOSSGIS e.V.</a></p>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="{{ STATIC_URL }}assets/js/jquery-2.0.3.min.js"></script>
+        {% render_block "js" %}
+        {% render_block "js_external" %}
+        {% if debug %}
+            <script src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
+        {% else %}
+            {# We have to configure the URLs statically because django-compressor operates offline. #}
+            {% if LANGUAGE_CODE == "de" %}
+                {% compress js %}
+                <script type="text/javascript" src="{% statici18n "de" %}"></script>
+                {% endcompress %}
+            {% else %}
+                {% if LANGUAGE_CODE == "en" %}
+                {% compress js %}
+                <script type="text/javascript" src="{% statici18n "en" %}"></script>
+                {% endcompress %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        {% compress js %}
+            <script type="text/javascript" src="{% static "assets/bower_components/foundation/js/foundation/foundation.js"%}"></script>
+            <script type="text/javascript" src="{% static "assets/bower_components/foundation/js/foundation/foundation.topbar.js"%}"></script>
+            <script type="text/javascript" src="{% static "assets/bower_components/foundation/js/foundation/foundation.orbit.js"%}"></script>
+            <script type="text/javascript" src="{% static "assets/bower_components/spinjs/spin.js"%}"></script>
+            <script type="text/javascript" src="{% static "assets/bower_components/parsley-de/index.js"%}"></script>
+            <script type="text/javascript" src="{% static "assets/bower_components/parsley.min/index.js"%}"></script>
+            <script src="{% static "assets/js/ui.js" %}"></script>
+            <script src="{% static "assets/js/validation.js" %}"></script>
+            <script src="{% static "assets/js/ui.multiuserselect.js" %}"></script>
+            <script src="{% static "assets/js/ui.tagsinput.js" %}"></script>
+            <script src="{% static "assets/js/ui.schedule.js" %}"></script>
+            <script>$(document).foundation();</script>
+        {% endcompress %}
+        {% block extra_foot %}{% endblock %}
+    </body>
+</html>
