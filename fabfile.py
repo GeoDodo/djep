@@ -3,11 +3,12 @@ import functools
 from os.path import join, splitext
 
 from fabric.api import *
+from fabric.contrib import files, project
 
 if not env.get('branch'):
     abort("Please select a config file (staging.ini | production.ini)")
-env.hosts = ['pyep00.gocept.net', ]
-env.srv_user = 'pyep'
+env.hosts = ['root@134.119.9.21', ]
+env.srv_user = 'fossgis'
 env.proj_name = 'pyconde'
 env.www_root = join(env.root, 'htdocs')
 env.proj_root = join(env.root, 'djep')
@@ -20,7 +21,6 @@ def srv_run(cmd):
         envdir=join(env.root, 'env'),
         cmd=cmd
         ), user=env.srv_user)
-
 
 def srv_open_shellfa(cmd):
     return open_shell('sudo -u %s -s -- %s' % (env.srv_user, cmd))
@@ -36,7 +36,6 @@ def manage_py(cmd):
 
 def supervisorctl(cmd):
     return srv_run('%s %s' % (join(env.root, 'bin', 'supervisorctl'), cmd))
-
 
 @task
 def compilemessages():
@@ -108,7 +107,7 @@ def build_static_files():
     """
     with cd(env.proj_root):
         srv_run('npm install')
-        with cd(env.proj_root + '/pyconde/skins/ep14/static/assets'):
+        with cd(env.proj_root + '/pyconde/skins/fg15/static/assets'):
             srv_run('../../../../../node_modules/bower/bin/bower install')
         with path('/srv/pyep/.gem/ruby/1.8/bin/', behavior='prepend'):
             srv_run('./node_modules/grunt-cli/bin/grunt compass:dist')
@@ -158,3 +157,35 @@ def build_docs():
     """
     with cd(join(env.proj_root, 'docs')):
         srv_run("source ../../bin/activate && make html")
+
+
+@task
+def make_dirs():
+    sudo('mkdir -p /opt')
+    sudo('mkdir -p /opt/konferenz')
+
+
+# todo check missing packages and update fab commands
+@task
+def install_deps():
+    with shell_env(DEBIAN_FRONTEND='readline'):
+        sudo('aptitude install -y -q'
+            ' python-dev tmux python-setuptools libpq-dev git gettext'
+            ' redis-server nodejs python-virtualenv python-lxml'
+            ' libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev'
+            ' postgresql-9.3-postgis-2.1 postgresql-client-9.3'
+        )
+
+@task
+def install_venv(upgrade=False, upgrade_venv=False):
+    venv = '/opt/konferenz'
+    if not files.exists(venv + '/bin/pip') or upgrade_venv:
+        run('virtualenv ' + venv)
+
+    put('requirements/base.txt', venv)
+    put('requirements/production.txt', venv)
+
+    upgrade = '--upgrade' if upgrade else ''
+
+    with cd(venv):
+        run('bin/pip install -r production.txt')
