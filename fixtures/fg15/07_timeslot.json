@@ -1,0 +1,119 @@
+[
+{
+    "pk": 1,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-11",
+        "slot": 1,
+        "section": 1
+    }
+},
+{
+    "pk": 2,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-11",
+        "slot": 2,
+        "section": 1
+    }
+},
+{
+    "pk": 3,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-12",
+        "slot": 1,
+        "section": 1
+    }
+},
+{
+    "pk": 4,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-12",
+        "slot": 2,
+        "section": 1
+    }
+},
+{
+    "pk": 5,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2014-07-24",
+        "slot": 1,
+        "section": 1
+    }
+},
+{
+    "pk": 6,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-13",
+        "slot": 2,
+        "section": 1
+    }
+},
+{
+    "pk": 7,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-13",
+        "slot": 1,
+        "section": 1
+    }
+},
+{
+    "pk": 9,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-11",
+        "slot": 1,
+        "section": 2
+    }
+},
+{
+    "pk": 10,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-11",
+        "slot": 2,
+        "section": 2
+    }
+},
+{
+    "pk": 11,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-12",
+        "slot": 1,
+        "section": 2
+    }
+},
+{
+    "pk": 12,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-12",
+        "slot": 2,
+        "section": 2
+    }
+},
+{
+    "pk": 13,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-13",
+        "slot": 1,
+        "section": 2
+    }
+},
+{
+    "pk": 14,
+    "model": "proposals.timeslot",
+    "fields": {
+        "date": "2015-03-13",
+        "slot": 2,
+        "section": 2
+    }
+}
+]

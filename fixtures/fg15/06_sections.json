@@ -1,0 +1,28 @@
+[
+{
+    "pk": 1,
+    "model": "conference.section",
+    "fields": {
+        "conference": 1,
+        "name": "Talk",
+        "end_date": "2015-03-11",
+        "order": 1,
+        "start_date": "2015-03-13",
+        "slug": "",
+        "description": ""
+    }
+},
+{
+    "pk": 2,
+    "model": "conference.section",
+    "fields": {
+        "conference": 1,
+        "name": "Workshop",
+        "end_date": "2015-03-11",
+        "order": 2,
+        "start_date": "2015-03-13",
+        "slug": "",
+        "description": ""
+    }
+}
+]

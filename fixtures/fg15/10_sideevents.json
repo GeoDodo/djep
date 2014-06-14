@@ -1,0 +1,140 @@
+[
+{
+    "pk": 1,
+    "model": "schedule.sideevent",
+    "fields": {
+        "conference": 1,
+        "is_global": false,
+        "end": "2015-03-11T11:00:00",
+        "name": "Pause I",
+        "is_pause": true,
+        "section": null,
+        "start": "2015-03-11T10:30:00",
+        "location": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "icon": "coffee",
+        "is_recordable": false,
+        "description": ""
+    }
+},
+{
+    "pk": 2,
+    "model": "schedule.sideevent",
+    "fields": {
+        "conference": 1,
+        "is_global": false,
+        "end": "2015-03-12T11:00:00",
+        "name": "Pause I",
+        "is_pause": true,
+        "section": null,
+        "start": "2015-03-12T10:30:00",
+        "location": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "icon": "coffee",
+        "is_recordable": false,
+        "description": ""
+    }
+},
+{
+    "pk": 3,
+    "model": "schedule.sideevent",
+    "fields": {
+        "conference": 1,
+        "is_global": false,
+        "end": "2015-03-13T11:00:00",
+        "name": "Pause I",
+        "is_pause": true,
+        "section": null,
+        "start": "2015-03-13T10:30:00",
+        "location": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "icon": "coffee",
+        "is_recordable": false,
+        "description": ""
+    }
+},
+{
+    "pk": 6,
+    "model": "schedule.sideevent",
+    "fields": {
+        "conference": 1,
+        "is_global": false,
+        "end": "2015-03-11T14:00:00",
+        "name": "Mittagessen",
+        "is_pause": true,
+        "section": null,
+        "start": "2015-03-11T12:30:00",
+        "location": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "icon": "cutlery",
+        "is_recordable": false,
+        "description": ""
+    }
+},
+{
+    "pk": 7,
+    "model": "schedule.sideevent",
+    "fields": {
+        "conference": 1,
+        "is_global": false,
+        "end": "2015-03-12T14:00:00",
+        "name": "Mittagessen",
+        "is_pause": true,
+        "section": null,
+        "start": "2015-03-12T12:30:00",
+        "location": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "icon": "cutlery",
+        "is_recordable": false,
+        "description": ""
+    }
+},
+{
+    "pk": 8,
+    "model": "schedule.sideevent",
+    "fields": {
+        "conference": 1,
+        "is_global": false,
+        "end": "2015-03-13T14:00:00",
+        "name": "Mittagessen",
+        "is_pause": true,
+        "section": null,
+        "start": "2015-03-13T12:30:00",
+        "location": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "icon": "cutlery",
+        "is_recordable": false,
+        "description": ""
+    }
+}
+]
