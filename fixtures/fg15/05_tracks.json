@@ -1,134 +1,146 @@
 [
 {
-    "pk": 1, 
-    "model": "conference.track", 
+    "pk": 1,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "best-practices", 
-        "visible": true, 
-        "order": 1, 
-        "name": "best practices"
+        "conference": 1,
+        "description": "",
+        "slug": "geodatabase",
+        "visible": true,
+        "order": 1,
+        "name": "Geodatenbanken"
     }
 },
 {
-    "pk": 2, 
-    "model": "conference.track", 
+    "pk": 2,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "education", 
-        "visible": true, 
-        "order": 2, 
-        "name": "education"
+        "conference": 1,
+        "description": "",
+        "slug": "security",
+        "visible": true,
+        "order": 2,
+        "name": "Sicherheit"
     }
 },
 {
-    "pk": 3, 
-    "model": "conference.track", 
+    "pk": 3,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "embedded-devices", 
-        "visible": true, 
-        "order": 3, 
-        "name": "embedded devices"
+        "conference": 1,
+        "description": "",
+        "slug": "inspire",
+        "visible": true,
+        "order": 3,
+        "name": "INSPIRE"
     }
 },
 {
-    "pk": 4, 
-    "model": "conference.track", 
+    "pk": 4,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "gaming", 
-        "visible": true, 
-        "order": 4, 
-        "name": "gaming"
+        "conference": 1,
+        "description": "",
+        "slug": "geoportal",
+        "visible": true,
+        "order": 4,
+        "name": "Geoportale"
     }
 },
 {
-    "pk": 5, 
-    "model": "conference.track", 
+    "pk": 5,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "other", 
-        "visible": true, 
-        "order": 5, 
-        "name": "other"
+        "conference": 1,
+        "description": "",
+        "slug": "lbs",
+        "visible": true,
+        "order": 5,
+        "name": "Location-Based-Services"
     }
 },
 {
-    "pk": 6, 
-    "model": "conference.track", 
+    "pk": 6,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "python-core", 
-        "visible": true, 
-        "order": 6, 
-        "name": "Python core"
+        "conference": 1,
+        "description": "",
+        "slug": "education",
+        "visible": true,
+        "order": 6,
+        "name": "Forschung & Lehre"
     }
 },
 {
-    "pk": 7, 
-    "model": "conference.track", 
+    "pk": 7,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "science", 
-        "visible": true, 
-        "order": 7, 
-        "name": "science"
+        "conference": 1,
+        "description": "",
+        "slug": "reports",
+        "visible": true,
+        "order": 7,
+        "name": "Erfahrungsberichte"
     }
 },
 {
-    "pk": 8, 
-    "model": "conference.track", 
+    "pk": 8,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "security", 
-        "visible": true, 
-        "order": 8, 
-        "name": "security"
+        "conference": 1,
+        "description": "",
+        "slug": "desktop",
+        "visible": true,
+        "order": 8,
+        "name": "Dekstop Software"
     }
 },
 {
-    "pk": 9, 
-    "model": "conference.track", 
+    "pk": 9,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "system-administration", 
-        "visible": true, 
-        "order": 9, 
-        "name": "system administration"
+        "conference": 1,
+        "description": "",
+        "slug": "web",
+        "visible": true,
+        "order": 9,
+        "name": "Web Software"
     }
 },
 {
-    "pk": 10, 
-    "model": "conference.track", 
+    "pk": 10,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "testing", 
-        "visible": true, 
-        "order": 10, 
-        "name": "testing"
+        "conference": 1,
+        "description": "",
+        "slug": "osm",
+        "visible": true,
+        "order": 10,
+        "name": "OpenStreetMap"
     }
 },
 {
-    "pk": 11, 
-    "model": "conference.track", 
+    "pk": 11,
+    "model": "conference.track",
     "fields": {
-        "conference": 1, 
-        "description": "", 
-        "slug": "web", 
-        "visible": true, 
-        "order": 11, 
-        "name": "web"
+        "conference": 1,
+        "description": "",
+        "slug": "osm_software",
+        "visible": true,
+        "order": 11,
+        "name": "OpenStreetMap Software"
+    }
+},
+{
+    "pk": 12,
+    "model": "conference.track",
+    "fields": {
+        "conference": 1,
+        "description": "",
+        "slug": "other",
+        "visible": true,
+        "order": 12,
+        "name": "Sonstiges"
     }
 }
 ]

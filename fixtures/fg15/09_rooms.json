@@ -39,8 +39,8 @@
         "conference": 1,
         "used_for_sessions": true,
         "order": 40,
-        "name": "B09",
-        "slug": "b09"
+        "name": "W01",
+        "slug": "w01"
     }
 },
 {
@@ -50,8 +50,8 @@
         "conference": 1,
         "used_for_sessions": true,
         "order": 50,
-        "name": "A08",
-        "slug": "a08"
+        "name": "W02",
+        "slug": "w02"
     }
 },
 {
@@ -61,19 +61,8 @@
         "conference": 1,
         "used_for_sessions": true,
         "order": 60,
-        "name": "A03/A04",
-        "slug": "a03-a04"
-    }
-},
-{
-    "pk": 7,
-    "model": "conference.location",
-    "fields": {
-        "conference": 1,
-        "used_for_sessions": true,
-        "order": 70,
-        "name": "A05/A06",
-        "slug": "a05-a06"
+        "name": "W03",
+        "slug": "w03"
     }
 }
 ]

@@ -22,5 +22,17 @@
         "closed": false,
         "start_date": null
     }
+},
+{
+    "pk": 3,
+    "model": "conference.sessionkind",
+    "fields": {
+        "conference": 1,
+        "name": "Poster",
+        "end_date": null,
+        "slug": "poster",
+        "closed": false,
+        "start_date": null
+    }
 }
 ]

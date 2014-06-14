@@ -1,32 +1,32 @@
 [
 {
-    "pk": 1, 
-    "model": "conference.audiencelevel", 
+    "pk": 1,
+    "model": "conference.audiencelevel",
     "fields": {
-        "conference": 1, 
-        "level": 1, 
-        "name": "Novice", 
-        "slug": "novice"
+        "conference": 1,
+        "level": 1,
+        "name": "Einsteiger",
+        "slug": "einsteiger"
     }
 },
 {
-    "pk": 2, 
-    "model": "conference.audiencelevel", 
+    "pk": 2,
+    "model": "conference.audiencelevel",
     "fields": {
-        "conference": 1, 
-        "level": 2, 
-        "name": "Advanced", 
-        "slug": "advanced"
+        "conference": 1,
+        "level": 2,
+        "name": "Fortgschritten",
+        "slug": "fortgschritten"
     }
 },
 {
-    "pk": 3, 
-    "model": "conference.audiencelevel", 
+    "pk": 3,
+    "model": "conference.audiencelevel",
     "fields": {
-        "conference": 1, 
-        "level": 3, 
-        "name": "Expert", 
-        "slug": "expert"
+        "conference": 1,
+        "level": 3,
+        "name": "Experte",
+        "slug": "experte"
     }
 }
 ]

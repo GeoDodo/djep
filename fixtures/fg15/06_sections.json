@@ -24,5 +24,18 @@
         "slug": "",
         "description": ""
     }
+},
+{
+    "pk": 3,
+    "model": "conference.section",
+    "fields": {
+        "conference": 1,
+        "name": "Poster",
+        "end_date": "2015-03-11",
+        "order": 3,
+        "start_date": "2015-03-13",
+        "slug": "",
+        "description": ""
+    }
 }
 ]

@@ -10,11 +10,21 @@
     }
 },
 {
+    "pk": 2,
+    "model": "conference.sessionduration",
+    "fields": {
+        "conference": 1,
+        "minutes": 0,
+        "slug": "poster",
+        "label": "poster"
+    }
+},
+{
     "pk": 3,
     "model": "conference.sessionduration",
     "fields": {
         "conference": 1,
-        "minutes": 180,
+        "minutes": 90,
         "slug": "workshop",
         "label": "Workshop"
     }
