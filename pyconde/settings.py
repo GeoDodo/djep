@@ -32,19 +32,19 @@ class Base(Configuration):
 
     EMAIL_HOST = values.Value()
 
-    DEFAULT_FROM_EMAIL = values.EmailValue('noreply@ep14.org')
+    DEFAULT_FROM_EMAIL = values.EmailValue('noreply@fossgis.de')
 
-    SERVER_EMAIL = values.EmailValue('noreply@ep14.org')
+    SERVER_EMAIL = values.EmailValue('noreply@fossgis.de')
 
-    SUPPORT_EMAIL = values.EmailValue('helpdesk@europython.eu')
+    SUPPORT_EMAIL = values.EmailValue('helpdesk@fossgis.de')
 
     TIME_ZONE = 'Europe/Berlin'
 
-    LANGUAGE_CODE = 'en'
+    LANGUAGE_CODE = 'de'
 
     SECRET_KEY = values.SecretValue()
 
-    EMAIL_SUBJECT_PREFIX = values.Value('[EuroPython 2014] ')
+    EMAIL_SUBJECT_PREFIX = values.Value('[FOSSGIS 2015] ')
 
     USE_I18N = True
 
@@ -56,7 +56,7 @@ class Base(Configuration):
 
     LANGUAGES = (
         ('de', ugettext('German')),
-        ('en', ugettext('English')),
+        # ('en', ugettext('English')),
     )
     INTERNAL_IPS = ('127.0.0.1',)
 
@@ -64,12 +64,12 @@ class Base(Configuration):
 
     TEMPLATE_DIRS = (
         os.path.join(BASE_DIR, 'skins', 'default'),
-        os.path.join(BASE_DIR, 'skins', 'ep14'),
+        os.path.join(BASE_DIR, 'skins', 'fg15'),
     )
 
     INSTALLED_APPS = [
         # Skins
-        'pyconde.skins.ep14',
+        'pyconde.skins.fg15',
         'pyconde.skins.default',
 
         'djangocms_admin_style',
@@ -158,7 +158,7 @@ class Base(Configuration):
     )
 
     DATABASES = values.DatabaseURLValue(
-            'sqlite:///{0}/djep.db'.format(BASE_DIR),
+            'sqlite:///{0}/fg15.db'.format(BASE_DIR),
             environ_prefix='DJANGO')
 
     # Disable south migrations during unittests
@@ -287,18 +287,19 @@ class Base(Configuration):
     CMS_LANGUAGES = {
         1: [
             {
-                'code': 'en',
-                'name': ugettext('English'),
-                'public': True,
-            },
-            {
                 'code': 'de',
                 'name': ugettext('German'),
                 'public': True,
             },
+            # {
+            #     'code': 'en',
+            #     'name': ugettext('English'),
+            #     'public': True,
+            # },
+
         ],
         'default': {
-            'fallbacks': ['en', 'de'],
+            'fallbacks': ['de'],
             'hide_untranslated': False,
         }
     }
@@ -370,13 +371,13 @@ class Base(Configuration):
 
     # These languages should be available when making a session proposal.
     PROPOSAL_LANGUAGES = (
-        ('de', ugettext('German')),
-        ('en', ugettext('English')),
+        ('de', ugettext('German'))
+        # ('en', ugettext('English')),
     )
 
     # This setting defines the language that should be pre-selected in the
     # proposal submission form.
-    PROPOSAL_DEFAULT_LANGUAGE = 'en'
+    PROPOSAL_DEFAULT_LANGUAGE = 'de'
 
 
     ###########################################################################

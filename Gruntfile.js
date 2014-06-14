@@ -3,8 +3,8 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         compass: {
             options: {
-                basePath: 'pyconde/skins/ep14/static/assets/',
-                config: 'pyconde/skins/ep14/static/assets/config.rb',
+                basePath: 'pyconde/skins/fg15/static/assets/',
+                config: 'pyconde/skins/fg15/static/assets/config.rb',
             },
             server: {},
             dist: {
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'pyconde/skins/ep14/static',
+                        cwd: 'pyconde/skins/fg15/static',
                         src: [
                             'assets/images/*.png',
                             'assets/images/*.svg',
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         },
         clean: {
             dist: ['dist'],
-            compass: ['pyconde/skins/ep14/static/assets/css/*']
+            compass: ['pyconde/skins/fg15/static/assets/css/*']
         },
         connect: {
             livereload: {
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
             },
             options: {
                 port: 9000,
-                base: "pyconde/skins/ep14/static",
+                base: "pyconde/skins/fg15/static",
                 livereload: 35729
             }
         },
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         },
         watch: {
             compass: {
-                files: ['pyconde/skins/ep14/static/assets/sass/*.scss'],
+                files: ['pyconde/skins/fg15/static/assets/sass/*.scss'],
                 tasks: ['compass:server']
             },
             livereload: {
@@ -65,9 +65,9 @@ module.exports = function(grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    'pyconde/skins/ep14/static/assets/css/*.css',
-                    'pyconde/skins/ep14/static/assets/images/*',
-                    'pyconde/skins/ep14/static/index.html'
+                    'pyconde/skins/fg15/static/assets/css/*.css',
+                    'pyconde/skins/fg15/static/assets/images/*',
+                    'pyconde/skins/fg15/static/index.html'
                 ]
             }
         },
